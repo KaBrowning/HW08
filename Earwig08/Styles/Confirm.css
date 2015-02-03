@@ -1,0 +1,12 @@
+﻿label {
+    float: left;
+    width: 9em;
+}
+.button {
+    margin-top: 1em;
+    padding: .25em .5em;
+    width: 10em;
+}
+#lblMessage {
+    color: green;
+}
