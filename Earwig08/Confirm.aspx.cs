@@ -13,8 +13,8 @@ using System.Web.UI;
 /// </version>
 public partial class Confirm : Page
 {
-
     private int _sessionClicks;
+
     /// <summary>
     /// Handles the Load event of the Page control.
     /// </summary>
@@ -59,7 +59,6 @@ public partial class Confirm : Page
             return;
         }
 
-        this._sessionClicks++;
         this.lblMessage.Text = this.lblMessage.Text = "It took you " + this._sessionClicks.ToString() + 
             " clicks on Submit<br />Thank you for your request.<br />We will gte back to you within 24 hours";
         Session["Count"] = this._sessionClicks;
@@ -72,6 +71,12 @@ public partial class Confirm : Page
         lastNameCookie.Expires = DateTime.Now.AddMinutes(10);
         Response.Cookies.Add(lastNameCookie);
     }
+
+    /// <summary>
+    /// Handles the Click event of the btnModify control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     protected void btnModify_Click(object sender, EventArgs e)
     {
         if (!Page.IsValid)
