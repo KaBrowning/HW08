@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web;
+using System.Web.UI;
 
 /// <summary>
 /// This is the code-behind file for the Confirmation page
@@ -10,8 +11,10 @@ using System.Web;
 /// <version>
 /// Replace this text with today's date
 /// </version>
-public partial class Confirm : System.Web.UI.Page
+public partial class Confirm : Page
 {
+
+    private int _sessionClicks;
     /// <summary>
     /// Handles the Load event of the Page control.
     /// </summary>
@@ -21,6 +24,18 @@ public partial class Confirm : System.Web.UI.Page
     {
         // Replace this comment with code to pull the data out of the
         //  Session object and pass it to DisplayReservation
+
+        if (Session["Count"] == null)
+        {
+            this._sessionClicks = 0;
+        }
+        else
+        {
+            this._sessionClicks = Convert.ToInt32(Session["Count"]);
+        }
+
+        this.lblMessage.Text = "It took you " + this._sessionClicks.ToString() + " clicks on Submit<br />" +
+                               "Thank you for your request.<br />We will gte back to you within 24 hours";
     }
 
     /// <summary>
@@ -43,6 +58,12 @@ public partial class Confirm : System.Web.UI.Page
         {
             return;
         }
+
+        this._sessionClicks++;
+        this.lblMessage.Text = this.lblMessage.Text = "It took you " + this._sessionClicks.ToString() + 
+            " clicks on Submit<br />Thank you for your request.<br />We will gte back to you within 24 hours";
+        Session["Count"] = this._sessionClicks;
+
         var firstNameCookie = new HttpCookie("FirstName", this.lblFirstName.Text);
         firstNameCookie.Expires = DateTime.Now.AddMinutes(10);
         Response.Cookies.Add(firstNameCookie);

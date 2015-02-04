@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Web;
 
 /// <summary>
@@ -16,14 +13,6 @@ public class ContactDetails
     private string _phone;
 
 
- 	public ContactDetails()
-	{
-		//
-		// TODO: Add constructor logic here
-		//
-	}
-
-
     public static ContactDetails GetContactDetails()
     {
         var cart = HttpContext.Current.Session["Contact"] as ContactDetails;
@@ -35,7 +24,7 @@ public class ContactDetails
 
     public string FirstName
     {
-        get { return this._firstName}
+        get { return this._firstName; }
         set
         {
             Trace.Assert(value != null, "Invalid First Name");
@@ -45,7 +34,7 @@ public class ContactDetails
 
     public string LastName
     {
-        get { return this._lastName}
+        get { return this._lastName; }
         set
         {
             Trace.Assert(value != null, "Invalid Last Name");

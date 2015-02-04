@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.UI;
 
 /// <summary>
 /// This is the code-behind file for the Contact page
@@ -9,8 +10,10 @@
 /// <version>
 /// February 3, 2015
 /// </version>
-public partial class Request : System.Web.UI.Page
+public partial class Request : Page
 {
+
+
     /// <summary>
     /// Handles the Load event of the Page control.
     /// </summary>
@@ -18,12 +21,16 @@ public partial class Request : System.Web.UI.Page
     /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (IsPostBack)
-            return;
-        
         // Replace this comment with code to pull the data out of the
         //  Session object and pass it to DisplayReservation
-    }
+        if (IsPostBack || (Request.Cookies["FirstName"] == null || Request.Cookies["LastName"] == null))
+        {
+            return;
+        }
+        this.txtFirstName.Text = Request.Cookies["FirstName"].Value;
+        this.txtLastName.Text = Request.Cookies["LastName"].Value;
+
+  }
 
     /// <summary>
     /// Displays the reservation.
