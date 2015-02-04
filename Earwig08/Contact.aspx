@@ -52,7 +52,7 @@
             </asp:DropDownList><br />
 
             <label class="label">&nbsp;</label>
-            <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="button" PostBackUrl="~/Confirm.aspx"/>&nbsp;
+            <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="button" PostBackUrl="~/Confirm.aspx" OnClick="btnSubmit_Click"/>&nbsp;
             <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="button" CausesValidation="False" OnClick="btnClear_Click" /><br />
             <p ID="message">
                 <asp:Label ID="lblMessage" runat="server"></asp:Label>
