@@ -29,19 +29,6 @@ public partial class Request : Page
         }
         this.txtFirstName.Text = Request.Cookies["FirstName"].Value;
         this.txtLastName.Text = Request.Cookies["LastName"].Value;
-
-        if (Session["Count"] == null)
-        {
-            this._sessionClicks = 0;
-        }
-        else
-        {
-            this._sessionClicks = Convert.ToInt32(Session["Count"]);
-        }
-
-        this.lblMessage.Text = "It took you " + this._sessionClicks.ToString() + " clicks on Submit<br />" +
-                               "Thank you for your request.<br />We will gte back to you within 24 hours";
-
   }
 
     /// <summary>
