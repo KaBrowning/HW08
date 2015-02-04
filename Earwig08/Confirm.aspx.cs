@@ -24,10 +24,6 @@ public partial class Confirm : Page
     {
         // Replace this comment with code to pull the data out of the
         //  Session object and pass it to DisplayReservation
-        if (!Page.IsValid)
-        {
-            return;
-        }
 
         if (Session["Count"] == null)
         {

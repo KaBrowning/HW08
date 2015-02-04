@@ -24,11 +24,6 @@ public partial class Request : Page
         // Replace this comment with code to pull the data out of the
         //  Session object and pass it to DisplayReservation
 
-        if (!Page.IsValid)
-        {
-            return;
-        }
-
         if (IsPostBack || (Request.Cookies["FirstName"] == null || Request.Cookies["LastName"] == null))
         {
             return;
