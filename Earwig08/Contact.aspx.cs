@@ -4,10 +4,10 @@
 /// This is the code-behind file for the Contact page
 /// </summary>
 /// <author>
-/// Replace this text with your first and last name
+/// Kathryn Browning
 /// </author>
 /// <version>
-/// Replace this text with today's date
+/// February 3, 2015
 /// </version>
 public partial class Request : System.Web.UI.Page
 {
