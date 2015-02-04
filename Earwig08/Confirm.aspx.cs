@@ -24,6 +24,10 @@ public partial class Confirm : Page
     {
         // Replace this comment with code to pull the data out of the
         //  Session object and pass it to DisplayReservation
+        if (!Page.IsValid)
+        {
+            return;
+        }
 
         if (Session["Count"] == null)
         {
@@ -34,6 +38,8 @@ public partial class Confirm : Page
         {
             this._sessionClicks = Convert.ToInt32(Session["Count"]);
         }
+
+        this.DisplayReservation();
 
         this.lblMessage.Text = "It took you " + this._sessionClicks.ToString() + " clicks on Submit<br />" +
                                "Thank you for your request.<br />We will gte back to you within 24 hours";
