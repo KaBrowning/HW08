@@ -12,7 +12,7 @@ using System.Web.UI;
 /// </version>
 public partial class Request : Page
 {
-
+    private int _sessionClicks;
 
     /// <summary>
     /// Handles the Load event of the Page control.
@@ -56,4 +56,16 @@ public partial class Request : Page
         this.lblMessage.Text = "";
     }
 
+    protected void btnSubmit_Click(object sender, EventArgs e)
+    {
+        if (!Page.IsValid)
+        {
+            return;
+        }
+
+        this._sessionClicks++;
+        this.lblMessage.Text = this.lblMessage.Text = "It took you " + this._sessionClicks.ToString() +
+            " clicks on Submit<br />Thank you for your request.<br />We will gte back to you within 24 hours";
+        Session["Count"] = this._sessionClicks;
+    }
 }

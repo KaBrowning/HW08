@@ -31,7 +31,7 @@
             <asp:Label ID="lblPreferredMethod" runat="server"></asp:Label><br />
             <br />
             <asp:Button ID="btnConfirm" runat="server" Text="Confirm" CssClass="button" OnClick="btnConfirm_Click" />
-            <asp:Button ID="btnModify" runat="server" Text="Modify" CssClass="button" PostBackUrl="~/Contact.aspx" /><br />
+            <asp:Button ID="btnModify" runat="server" Text="Modify" CssClass="button" PostBackUrl="~/Contact.aspx" OnClick="btnModify_Click" /><br />
             <p id="message">
                 <asp:Label ID="lblMessage" runat="server"></asp:Label>
             </p>

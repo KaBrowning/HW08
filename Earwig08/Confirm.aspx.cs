@@ -72,4 +72,15 @@ public partial class Confirm : Page
         lastNameCookie.Expires = DateTime.Now.AddMinutes(10);
         Response.Cookies.Add(lastNameCookie);
     }
+    protected void btnModify_Click(object sender, EventArgs e)
+    {
+        if (!Page.IsValid)
+        {
+            return;
+        }
+
+        this.lblMessage.Text = this.lblMessage.Text = "It took you " + this._sessionClicks.ToString() +
+            " clicks on Submit<br />Thank you for your request.<br />We will gte back to you within 24 hours";
+        Session["Count"] = this._sessionClicks;
+    }
 }
