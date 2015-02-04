@@ -28,6 +28,7 @@ public partial class Confirm : Page
         if (Session["Count"] == null)
         {
             this._sessionClicks = 0;
+            Session["Count"] = 0;
         }
         else
         {
