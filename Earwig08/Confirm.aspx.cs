@@ -49,10 +49,10 @@ public partial class Confirm : Page
         // Replace this comment with the appropriate code to load
         //  the data out of the object and onto the page
 
-        this.lblFirstName.Text = Session["FirstName"].ToString();
-        this.lblLastName.Text = Session["LastName"].ToString();
-        this.lblEmail.Text = Session["Email"].ToString();
-        this.lblPhone.Text = Session["Phone"].ToString();
+      this.lblFirstName.Text = Session["FirstName"].ToString();
+      this.lblLastName.Text = Session["LastName"].ToString();
+     this.lblEmail.Text = Session["Email"].ToString();
+      this.lblPhone.Text = Session["Phone"].ToString();
     }
 
     /// <summary>
